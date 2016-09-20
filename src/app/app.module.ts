@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { routing } from './app.routing';
 
@@ -28,7 +29,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     AlertModule,
     routing
   ],
-  providers: [],
+ providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
