@@ -2,6 +2,23 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.14.
 
+This project includes modular approach and inner routes, Default modules are  
+
+## catalog
+    Products
+    Categories 
+
+## Account 
+    Profile
+    Login
+    SignUp
+    Forgot-password 
+
+## CMS-pages
+## Shopping-cart
+
+All these modules are based on inner routing & modular approach.
+
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -76,7 +76,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     border-radius: 3px;
     font-size: 18px;
-    padding: 20px 40px;
+    padding: 45px 40px;
+    opacity: .6;
 }
 
 // Custom Navigation Bar
@@ -169,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('./public/img/slides/slide-3-2050x600.jpg');
+    background-image: url('./public/img/bg-img-3.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;

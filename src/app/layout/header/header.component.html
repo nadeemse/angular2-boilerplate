@@ -7,34 +7,45 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Ng2 Boilerplate</a>
+                <a class="navbar-brand page-scroll" [routerLink]="['/home']">Ng2 Boilerplate</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    <li class="dropdown" ng2Dropdown>
+                    <a
+                        class="dropdown-toggle"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false">Catalog <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog']">Catalog</a></li>
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog/products']">Products</a></li>
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog/categories']">Categories</a></li>
+                    </ul>
                     </li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" ng2Dropdown>
+                    <a
+                        class="dropdown-toggle"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false">Account <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account']">Account</a></li>
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/profile']">Profile</a></li>
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/login']">Login</a></li>
+                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/signup']">SignUp</a></li>
+                    </ul>
+                    </li>
+                </ul>
+
             </div>
             <!-- /.navbar-collapse -->
 
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
-            </div>
-        </div>
-    </header>
