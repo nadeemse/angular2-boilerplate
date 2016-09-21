@@ -22,7 +22,7 @@ All these modules are based on inner routing & modular approach.
 ## Project Setup
 
 
-Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!
+Follow the following steps and you're good to go! Important: NPM has to be installed on your machine!
 
 ## 1: Clone repo
     git clone https://github.com/nadeemse/angular2-boilerplate.git
@@ -94,4 +94,5 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 
 ## MORE HELP 
-    For more information, Drop me an email <b>NADEEMAKHTAR.SE@GMAIL.COM<b>
+
+For help, Drop me an email on [nadeemakhtar.se@gmail.com](nadeemakhtar.se@gmail.com)
