@@ -19,11 +19,28 @@ This project includes modular approach and inner routes, Default modules are
 
 All these modules are based on inner routing & modular approach.
 
+## Project Setup
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!
+
+## 1: Clone repo
+    git clone https://github.com/nadeemse/angular2-boilerplate.git
+    
+## 2: Install packages
+    cd angular2-boilerplate
+    npm install
+    npm install angular-cli
+    
+## Further help for Angular CLI 
+    To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## 3: Start server
+   Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+    
 ## Code scaffolding
+
 
 ## Component
 
@@ -75,6 +92,6 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 Run `ng github-pages:deploy` to deploy to Github Pages.
 
-## Further help
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## MORE HELP 
+    For more information, Drop me an email <b>NADEEMAKHTAR.SE@GMAIL.COM<b>
