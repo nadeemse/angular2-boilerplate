@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CategoriesService } from '../../core/services/categories.service';
+
 @Component({
   selector: 'barrat-categories',
   templateUrl: './categories.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  categories: any[] = [];
+  constructor(private catService: CategoriesService) { }
 
   ngOnInit() {
+      this.catService.getCategories()
+      .subscribe(
+          data => {
+           this.categories = data;
+          }
+     );
   }
 
 }

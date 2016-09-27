@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ProductsService } from '../../core/services/products.service';
+
 @Component({
   selector: 'barrat-product',
   templateUrl: './product.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  products: any[] = [];
+  constructor(private productService: ProductsService) { }
 
   ngOnInit() {
+      this.productService.getProducts()
+      .subscribe(
+          data => {
+           this.products = data;
+          }
+     );
   }
 
 }

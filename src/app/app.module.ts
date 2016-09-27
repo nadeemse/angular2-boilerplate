@@ -11,6 +11,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CmsPageComponent } from './cms-page/cms-page.component';
 import { CoreModule } from './core.module';
+import { CategoriesService } from './core/services/categories.service';
+import { ProductsService } from './core/services/products.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { CoreModule } from './core.module';
     routing,
     CoreModule
   ],
- providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CategoriesService, ProductsService, { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
