@@ -5,14 +5,14 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 This project includes modular approach and inner routes, Default modules are  
 
 ## catalog
-    Products
-    Categories 
+* Products
+* Categories 
 
 ## Account 
-    Profile
-    Login
-    SignUp
-    Forgot-password 
+* Profile
+* Login
+* SignUp
+* Forgot-password 
 
 ## CMS-pages
 ## Shopping-cart
@@ -34,41 +34,46 @@ Follow the following steps and you're good to go! Important: NPM has to be insta
 
 ## potential issues
 
-    Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
-    
-    If you will see this error then it mean that angular-cli version need to be upgraded, simply follow below steps to make it run.
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
 
-    1) npm uninstall angular-cli -g
+If you will see this error then it mean that angular-cli version need to be upgraded, simply follow below steps to make it run.
 
-    This willl remove angular-cli global version.
+    npm uninstall angular-cli -g
 
-    2) npm cache clean
+This will remove angular-cli global version.
 
-    Clear NPM cache
+    npm cache clean
 
-    3) npm install angular-cli@latest -g
+Clear NPM cache
 
-    Install latest version of angular-cli globally
+    npm install angular-cli@latest -g
 
-    4)  rm -rf node_modules dist tmp
+If you have an existing project built with prior versions of Angular CLI, you will need to upgrade:
 
-    Remove node modules, dist and tmp folder by running above command.
+    rm -rf node_modules dist tmp
 
-    5) npm install angular-cli@latest --save-dev
+Remove node modules, dist and tmp folder by running above command.
 
-    Install latest angular-cli version in your project 
+    npm install angular-cli@latest --save-dev
 
-    6) npm install 
+Install latest angular-cli version in your project 
 
-    install dependencies 
+    npm install 
 
-    7) ng serve 
+install dependencies 
 
-    Enjoy developing Angular2 application.
+    ng serve 
+
+Enjoy developing Angular2 application.
+
+Choose following work-around if you can't upgrade Angular CLI.
+
+    npm uninstall webpack --save-dev
+    npm install webpack@2.1.0-beta.22 --save-dev
 
     
 ## Further help for Angular CLI 
-    To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## 3: Start server
    Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
