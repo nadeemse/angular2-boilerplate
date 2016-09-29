@@ -32,7 +32,40 @@ Follow the following steps and you're good to go! Important: NPM has to be insta
     npm install
     npm install -g angular-cli
 
-## 
+## potential issues
+
+    Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+    
+    If you will see this error then it mean that angular-cli version need to be upgraded, simply follow below steps to make it run.
+
+    1) npm uninstall angular-cli -g
+
+    This willl remove angular-cli global version.
+
+    2) npm cache clean
+
+    Clear NPM cache
+
+    3) npm install angular-cli@latest -g
+
+    Install latest version of angular-cli globally
+
+    4)  rm -rf node_modules dist tmp
+
+    Remove node modules, dist and tmp folder by running above command.
+
+    5) npm install angular-cli@latest --save-dev
+
+    Install latest angular-cli version in your project 
+
+    6) npm install 
+
+    install dependencies 
+
+    7) ng serve 
+
+    Enjoy developing Angular2 application.
+
     
 ## Further help for Angular CLI 
     To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
