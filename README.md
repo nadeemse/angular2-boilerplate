@@ -30,7 +30,9 @@ Follow the following steps and you're good to go! Important: NPM has to be insta
 ## 2: Install packages
     cd angular2-boilerplate
     npm install
-    npm install angular-cli
+    npm install -g angular-cli
+
+## 
     
 ## Further help for Angular CLI 
     To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
