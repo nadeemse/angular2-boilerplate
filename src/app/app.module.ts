@@ -13,6 +13,7 @@ import { CmsPageComponent } from './cms-page/cms-page.component';
 import { CoreModule } from './core.module';
 import { CategoriesService } from './core/services/categories.service';
 import { ProductsService } from './core/services/products.service';
+import { AccountService } from './core/services/account.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ProductsService } from './core/services/products.service';
     routing,
     CoreModule
   ],
-  providers: [CategoriesService, ProductsService, { provide: LocationStrategy, useClass: HashLocationStrategy } ],
+  providers: [CategoriesService, ProductsService, AccountService, { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
