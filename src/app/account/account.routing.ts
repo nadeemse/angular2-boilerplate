@@ -6,10 +6,12 @@ import { LoginComponent } from '../account/login/login.component';
 import { ForgotPasswordComponent } from '../account/forgot-password/forgot-password.component';
 import { ProfileComponent } from '../account/profile/profile.component';
 
+import { AuthGuard } from '../core/auth.guard';
+
 const ACCOUNT_ROUTES: Routes = [
     { path: '', component: AccountComponent, children: [
         { path: '', component: ProfileComponent },
-        { path: 'profile', component: ProfileComponent },
+        { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
         { path: 'login', component: LoginComponent },
         { path: 'forgot-password', component: ForgotPasswordComponent },
         { path: 'signup', component: SignupComponent }

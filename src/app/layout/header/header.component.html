@@ -13,33 +13,23 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown" ng2Dropdown>
-                    <a
-                        class="dropdown-toggle"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="false">Catalog <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog']">Catalog</a></li>
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog/products']">Products</a></li>
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/catalog/categories']">Categories</a></li>
-                    </ul>
-                    </li>
+                    <li *ngIf="!isAuth()" ><a class="page-scroll" [routerLink]="['/account/login']">Login</a></li>
+                    <li *ngIf="!isAuth()" ><a class="page-scroll" [routerLink]="['/account/signup']">SignUp</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown" ng2Dropdown>
+
+                    <li *ngIf="isAuth()" class="dropdown" ng2Dropdown>
                     <a
                         class="dropdown-toggle"
                         role="button"
                         aria-haspopup="true"
-                        aria-expanded="false">Account <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account']">Account</a></li>
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/profile']">Profile</a></li>
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/login']">Login</a></li>
-                        <li routerLinkActive="active"><a class="page-scroll" [routerLink]="['/account/signup']">SignUp</a></li>
-                    </ul>
+                        aria-expanded="false">Welcome Back <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="page-scroll" [routerLink]="['/account/profile']">Profile</a></li>
+                            <li><a class="page-scroll" (click)="onLogout()">Logout</a></li>
+                        </ul>
+
                     </li>
                 </ul>
 

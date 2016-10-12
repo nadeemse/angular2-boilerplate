@@ -50,8 +50,7 @@ export class HttpInterceptor extends Http {
         }
         if (options.headers == null) {
            options.headers = new Headers({
-                    'Content-Type': 'application/json',
-                    'x-api-ns': 'v1'
+                    'Content-Type': 'application/json'
                 });
         }
 
@@ -59,7 +58,6 @@ export class HttpInterceptor extends Http {
         if(customerToken) {
             options.headers.append('customer-token', customerToken);
         }
-        options.headers.append('token', '4bc5bc2eb8881ed5be34d77989b5e447e1199750');
         return options;
     };
 

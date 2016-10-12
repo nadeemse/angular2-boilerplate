@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Login } from '../../core/models/login';
 import { AccountService } from '../../core/services/account.service';
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   @Input() loginModel: Login;
 
-  constructor(private account: AccountService,  private toasterService: ToasterService) {}
+  constructor(private account: AccountService,  private toasterService: ToasterService, private router: Router) {}
 
   ngOnInit() {
 
@@ -32,5 +33,6 @@ export class LoginComponent implements OnInit {
   onSubmit(loginData: Login) {
     this.loginModel = loginData;
     this.account.LoginUser(this.loginModel);
+    this.router.navigate(['/account/profile']);
   }
 }

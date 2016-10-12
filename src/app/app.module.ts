@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 
 import { routing } from './app.routing';
 import { HttpInterceptor }  from './core/http-interceptor';
+import { AuthGuard } from './core/auth.guard';
+
 import {ToastyModule} from 'ng2-toasty';
 
 import { AppComponent } from './app.component';
@@ -39,7 +41,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     CoreModule,
     ToastyModule.forRoot()
   ],
-  providers: [ToasterService, CategoriesService, ProductsService, AccountService, { 
+  providers: [ AuthGuard, CookieService, ToasterService, CategoriesService, ProductsService, AccountService, { 
     provide: HttpInterceptor,
     useFactory: (backend: XHRBackend,
     options: RequestOptions,
