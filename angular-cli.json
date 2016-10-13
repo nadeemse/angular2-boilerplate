@@ -16,6 +16,7 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+         "../node_modules/ng2-toasty/style-bootstrap.css",
         "styles.scss"
       ],
       "scripts": [
