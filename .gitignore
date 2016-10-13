@@ -12,6 +12,10 @@
 /.idea
 .history
 .project
+<<<<<<< HEAD
+=======
+.vscode
+>>>>>>> f0bfbdae323e0983086c87fa6e75a692d8ed70e9
 .classpath
 *.launch
 .settings/

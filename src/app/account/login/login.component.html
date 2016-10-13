@@ -1,0 +1,41 @@
+
+<!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Login to NG2 app.</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="modal-dialog" style="margin-bottom:0">
+                        <div class="modal-content">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Sign In</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form rid="barrat-login" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <input class="form-control" [ngModel]="loginModel.userName" placeholder="E-mail" name="email" type="email" autofocus="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Password" name="password" type="password" [ngModel]="loginModel.password">
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input [ngModel]="loginModel.rememberMe" name="remember" type="checkbox" value="1">Remember Me
+                                                    </label>
+                                                </div>
+                                                <!-- Change this to a button or input when using this as a form -->
+                                                <button class="btn btn-sm btn-success" type="submit" [disabled]="!form.valid">Login</button>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
