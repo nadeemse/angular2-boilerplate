@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Login } from '../../core/models/login';
-import { AccountService } from '../../core/services/account.service';
+import { AccountService } from '../account.service';
 
 import { ToasterService } from '../../core/toaster/toaster.service';
 import { Toaster } from '../../core/toaster/toaster';

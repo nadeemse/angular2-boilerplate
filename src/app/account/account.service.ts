@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpInterceptor }  from '../../core/http-interceptor';
-import { Observable } from 'rxjs/Rx';
+import { HttpInterceptor }  from '../core/http-interceptor';
 import { Router } from '@angular/router';
 
 // Import RxJs required methods

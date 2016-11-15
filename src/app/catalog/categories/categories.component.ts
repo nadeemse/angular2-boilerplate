@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CategoriesService } from '../../core/services/categories.service';
+import { CategoriesService } from '../categories.service';
 
 @Component({
   selector: 'barrat-categories',

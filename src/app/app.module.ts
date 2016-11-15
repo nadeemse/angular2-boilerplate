@@ -20,9 +20,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ToasterComponent } from './core/toaster/toaster.component';
 
 
-import { CategoriesService } from './core/services/categories.service';
-import { ProductsService } from './core/services/products.service';
-import { AccountService } from './core/services/account.service';
+import { CategoriesService } from './catalog/categories.service';
+import { ProductsService } from './catalog/products.service';
+import { AccountService } from './account/account.service';
 
 import { ToasterService } from './core/toaster/toaster.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
