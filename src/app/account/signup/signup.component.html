@@ -1,38 +1,165 @@
-
 <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Welcome to SignUp Page</h2>
-                    <h3 class="section-subheading text-muted">You Can customize this page and implement your own logic</h3>
+<section id="services" class="category-block">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <p>Already have a <a class="default-color" [routerLink]="['/home']">NG2 BoilerPlate</a> Account ? <a [routerLink]="['/account/login']">Login.</a></p>
+
+        <div class="row login-block">
+
+          <div class="col-sm-12 text-center signup-top">
+
+            <p>Create a FREE account.</p>
+            <barrat-facebook></barrat-facebook>
+          </div>
+
+          <div class="col-sm-12 signup-bottom">
+
+            <p>Or Register Normally.</p>
+            <p class="text-danger"> Note: All Fileds are mandatory</p>
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="email" formControlName="email" placeholder="Email" class="form-control">
+                    <small *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched" class="text-danger">Please Enter Valid email address.</small>
+                  
+                  </div>
                 </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="confirm_email" formControlName="confirm_email" placeholder="Confirm Email" class="form-control">
+                    <small *ngIf="registerForm.controls['confirm_email'].hasError('required') && registerForm.controls['confirm_email'].touched" class="text-danger">Please Enter confirm email address.</small>
+                    <small *ngIf="registerForm.controls['confirm_email'].touched && (registerForm.controls['email'].value != registerForm.controls['confirm_email'].value )" class="text-danger">Email and confirm email should be matched.</small>
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="password" name="password" formControlName="password" placeholder="Password" class="form-control">
+                    <small *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched" class="text-danger">Password is required!.</small>
+                  
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="password" name="confirm_password" formControlName="confirm_password" placeholder="Confirm Password" class="form-control">
+                   <small *ngIf="registerForm.controls['confirm_password'].hasError('required') && registerForm.controls['confirm_password'].touched" class="text-danger">Confirm password is required!.</small>
+                   <small *ngIf="registerForm.controls['confirm_password'].touched && (registerForm.controls['password'].value != registerForm.controls['confirm_password'].value )" class="text-danger">Password & confirm passowrd should be matched.</small>
+                  </div>
                 </div>
-            </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="first_name" formControlName="first_name" placeholder="First Name" class="form-control">
+                    <small *ngIf="registerForm.controls['first_name'].hasError('required') && registerForm.controls['first_name'].touched" class="text-danger">Confirm password is required!.</small>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="last_name" formControlName="last_name" placeholder="Last Name" class="form-control">
+                  
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                   <input type="tel" class="form-control" formControlName="phone_number" placeholder="Entrer Mobile number" >
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <select name="gender" formControlName="gender" class="form-control"> 
+                        <option value="">My Mother Call me</option>
+                        <option *ngFor="let gender of genders;" value="{{gender.code}}">{{ gender.title }}</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <select name="country" formControlName="country" class="form-control"> 
+                        <option value="">My Passport tell me I am from.</option>
+                        <option *ngFor="let country of countries;" value="{{country.id}}">{{ country.country_name }}</option>
+                    </select>
+                  </div>
+                </div>
+        
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-sm-2 margin-top-12">
+                      D.O.B
+                    </div>
+                    <div class="col-sm-10">
+                      <input type="text" name="dob" formControlName="dob" placeholder="Date of birth" class="form-control">
+                
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <br />
+
+              <div class="row">
+                <div class="col-sm-12">
+
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" name="occasional_updates" formControlName="occasional_updates" class="checkbox">
+                        Allow NG2 BoilerPlate to send me occasional updates about the site.
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" name="amazing_offers" formControlName="amazing_offers" class="checkbox">
+                        Send me amazing offers bargains our advertising partners.
+                    </label>
+                  </div>
+
+                  <p>By clicking on Register. You Agree to the NG2 BoilerPlate Terms and Conditions and the Privacy Policy.</p>
+
+                  <br />
+                  <p class="text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+                  </p>
+
+                </div>
+              </div>
+
+
+            </form>
+
+          </div>
+
         </div>
-    </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>

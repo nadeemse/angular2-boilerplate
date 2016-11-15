@@ -1,6 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpInterceptor }  from '../core/http-interceptor';
+import { Injectable, EventEmitter } from '@angular/core';
+import { HttpInterceptor } from '../core/http-interceptor';
+import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
+
+import { environment } from '../../environments/environment';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -10,39 +13,59 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 @Injectable()
 export class AccountService {
 
-  SESSION_URL: string = 'http://example.com/v1/user/session';
-  ACCOUNT_ENDPOINT: string = 'http://example.com/v1/user/account';
-  constructor(private http: HttpInterceptor, private __cookie: CookieService, private router: Router) {}
+    SESSION_URL: string = 'user/session';
+    ACCOUNT_ENDPOINT: string = 'user/account';
 
-  LoginUser(body) {
+    isLogout: boolean = false;
+    logoutCalled = new EventEmitter<boolean>();
 
-    console.log(body);
-     this.__cookie.put('customer-token', '1234487sjhkjhdsjyyshjkfsy8sydsidhisuhdiush'); // This will be dynamic from server 
-    return;
-  }
+    constructor(private http: HttpInterceptor, private __cookie: CookieService, private router: Router) { }
 
-  signUpUser(body) {
-    console.log(body);
-    return;
-  }
-
-  forgotPassword(data: any) {
-     return this.http.post(this.SESSION_URL + '/forgot-password', data);
-  }
-  getProfile() {
-      return this.http.get(this.ACCOUNT_ENDPOINT + '/profile');
-  }
-  isAuthenticated() {
-    let customerToken = this.__cookie.get('customer-token');
-    if(customerToken) {
-        return true;
-    } else {
-      return false;
+    register(data: any) {
+        return this.http.post(environment.API_URL + this.SESSION_URL + '/signup', data);
     }
-  }
-  logout() {
-    this.__cookie.remove('customer-token');
-    this.router.navigate(['/account/login']);
-  }
+
+    login(data: any) {
+        return this.http.post(environment.API_URL + this.SESSION_URL + '/login', data);
+    }
+
+    facebookLogin(data: any) {
+        return this.http.post(environment.API_URL + this.SESSION_URL + '/facebook-login', data);
+    }
+
+    forgotPassword(data: any) {
+        return this.http.post(environment.API_URL + this.SESSION_URL + '/forgot-password', data);
+    }
+
+    resetPassword(token: string, data: any) {
+        return this.http.post(environment.API_URL + this.SESSION_URL + '/reset-password?password_token=' + token, data);
+    }
+
+    getProfile() {
+        return this.http.get(environment.API_URL + this.ACCOUNT_ENDPOINT + '/profile?expand=country&token=' + environment.API_TOKEN);
+    }
+
+    verifyAccount(code: string) {
+        return this.http.get(environment.API_URL + this.ACCOUNT_ENDPOINT + '/verify?code=' + code);
+    }
+
+    updateProfile(profile: any) {
+        return this.http.patch(environment.API_URL + this.ACCOUNT_ENDPOINT + '/update?token=' + environment.API_TOKEN, profile);
+    }
+
+    isAuthenticated() {
+        let customerToken = this.__cookie.get('customer-token');
+        if (customerToken) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    logout() {
+        this.__cookie.remove('customer-token');
+        this.isLogout = true;
+        this.logoutCalled.emit(this.isLogout);
+        this.router.navigate(['/account/login']);
+    }
 
 }
