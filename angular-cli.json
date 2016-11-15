@@ -21,7 +21,7 @@
       ],
       "scripts": [
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "public/js/agency.min.js"
+        "assets/js/agency.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

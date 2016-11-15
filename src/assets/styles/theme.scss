@@ -1,5 +1,5 @@
-@import "./public/styles/variables";
-@import "./public/styles/mixins";
+@import "./assets/styles/variables";
+@import "./assets/styles/mixins";
 
 
 // Global Components
@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('./public/img/bg-img-3.jpg');
+    background-image: url('./assets/img/bg-img-3.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -540,7 +540,7 @@ aside.clients {
 
 section#contact {
     background-color: $gray-darker;
-    background-image: url('./public/img/map-image.png');
+    background-image: url('./assets/img/map-image.png');
     background-position: center;
     background-repeat: no-repeat;
     .section-heading {
